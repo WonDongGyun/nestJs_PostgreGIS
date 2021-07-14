@@ -3,16 +3,12 @@
 <br/>
 <br/>
 
-🎮 조건  
+🎮 해당 프로젝트의 기능
 -------------  
 
 - 지리정보인 Point 정보를 저장, 조회하는 기능을 갖는 서버를 만드는 프로젝트입니다.  
-- API는 graphql로 구현되어야 합니다.  
-- typescript, nestjs, nestjs/graphql, typeorm으로 구현하세요. (필요에 따라 다른 패키지들을 얼마든지 추가해도 됩니다.)  
-- typeorm의 synchronize 옵션은 true로 해도 괜찮습니다.  
-- DB는 postgresql에 postgis extension을 설치하여 사용하세요.
-- Location 테이블의 coordinate의 DB 필드 타입은 반드시 postgis의 geometry 타입, srid = 4326으로 만드세요.  
-- 지리정보는 반드시 GeoJSON 형식으로 다루세요.   
+- API는 graphql를 사용하여 구현하였습니다.
+- n + 1 문제를 쉽게 보기 위한 주석 및 코드가 존재합니다.
 
 <br/>
 <br/>
