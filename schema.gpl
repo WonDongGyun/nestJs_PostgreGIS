@@ -1,0 +1,56 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Location {
+  id: ID!
+  name: String!
+  coordinate: GeoJSONPoint!
+  order_number: Int!
+  created_at: Time!
+  location_group: Location_Group!
+}
+
+"""Geometry scalar type"""
+scalar GeoJSONPoint
+
+"""UTC timestamp with timezone. output is ISOString"""
+scalar Time
+
+type Location_Group {
+  id: ID!
+  name: String!
+  order_number: Int!
+  created_at: Time!
+  locations: [Location!]!
+}
+
+type Query {
+  AllLocation: [Location!]!
+  location(id: ID!): Location!
+  locationFromCenter(center: GeoJSONPoint!): [Location!]!
+  AllLocationGroup: [Location_Group!]!
+  locationGroup(id: ID!): Location_Group!
+  locationGroups(data: LocationGroupWhereInput!): [Location_Group!]!
+}
+
+input LocationGroupWhereInput {
+  name: String!
+}
+
+type Mutation {
+  createLocation(data: LocationDataInput!): Location!
+  createLocationGroup(data: LocationGroupDataInput!): Location_Group!
+}
+
+input LocationDataInput {
+  name: String!
+  locationGroupId: ID!
+  coordinate: GeoJSONPoint!
+  order_number: Int!
+}
+
+input LocationGroupDataInput {
+  name: String!
+  order_number: Int!
+}
